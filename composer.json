@@ -1,0 +1,12 @@
+{
+    "name": "cheevavorn/line-bot",
+    "authors": [
+        {
+            "name": "Cheevavorn Saitthakool",
+            "email": "mean.mea2@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.1"
+    }
+}

@@ -1,7 +1,7 @@
 <?php
     require('../libs/database/connect-db.php');
     require('../libs/utils/utils.php');
-    require('../libs/log/log_individuals.php');
+    // require('../libs/log/log_individuals.php');
 
     $target_path = uploadXLSXFile($conn, $_FILES['vocfile']);
     $namedDataArray = getDataFromXLSXPath($target_path);

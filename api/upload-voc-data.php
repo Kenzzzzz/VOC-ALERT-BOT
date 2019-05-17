@@ -11,5 +11,5 @@
     echo "ได้เพิ่มข้อมูลแล้วทั้งหมด ".$number_complaint." ข้อมูล";
     
     // check complaint have to notify and log its
-    clearOfficeNotify($conn);
-    logOfficeToNotify($conn);
+    // clearOfficeNotify($conn);
+    // logOfficeToNotify($conn);

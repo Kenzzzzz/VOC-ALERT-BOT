@@ -112,7 +112,7 @@
                 "action": {
                   "type": "uri",
                   "label": "รายละเอียดเพิ่มเติม",
-                  "uri": "https://voc-bot.herokuapp.com/south.php?NUMBER=@10"
+                  "uri": "https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"
                 }
               }
             ]

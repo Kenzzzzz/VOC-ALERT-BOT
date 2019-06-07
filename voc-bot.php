@@ -232,7 +232,4 @@ if (!is_null($events['events'])) {
 }
 
 echo '<a href="test.php">test</a>';
-(br)
-echo '<a href="test1.php">test1</a>';
-(/br)
 

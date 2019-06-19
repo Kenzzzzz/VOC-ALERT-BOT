@@ -3,7 +3,7 @@
     require('./libs/utils/date_thai.php');
     require('./libs/utils/date_utils.php');
     require('./libs/utils/messages.php');
-    $access_token = 'GO5wzwEVItp4dA/pnVqhbpl0ACdwwqDxNe03rt0aB2FfMoWJlsh72VygFVW1g5WpTj8t2veluOUk/Tn5VDcxJZisMF9qa2Lr6WAIS1Qxj5qQGmGlhQBL7x9MHGAwEHPsoOZk4Ay7DbOUkRL35dG8bAdB04t89/1O/w1cDnyilFU=';
+    $access_token = 'SbKZVcVH2f6YFF80RkkQmVc7XuF5qUKrOqUWZ9WJOpA';
     
     $todaytime = strtotime('today');
     $todaydate = date('Y-m-d', $todaytime);
@@ -30,13 +30,13 @@
         ];
     }
     while($group = $group_list->fetch_assoc()){
-        $url = 'https://api.line.me/v2/bot/message/push';
+        $url = 'https://notify-api.line.me/api/notify';
         $data = [
             'to' => $group['group_id'],
             'messages' => [$messages]
         ];
         $post = json_encode($data);
-        $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+        $headers = array('Content-Type: application/x-www-form-urlencoded\r\n', 'Authorization: Bearer ' . $access_token);
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

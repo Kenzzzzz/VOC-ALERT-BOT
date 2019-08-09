@@ -104,13 +104,13 @@
             $complaint_id = $row['เลขที่คำร้องส่งถึง กฟภ.'];
 
             $sent_date = ($row['วันที่คำร้องส่งถึง กฟภ.']);
-            $received_date = ($row['วันที่รับข้อร้องเรียน']);
+            $received_date = ($row['วันที่รับเสียงของลูกค้า']);
             $settlement_date = ($row['วันที่ปิดข้อร้องเรียน']);
 
             $complainant_name = $row['ชื่อผู้ร้องเรียน'];
-            $complaint_type = $row['ประเภทข้อร้องเรียน'];
+            $complaint_type = $row['ประเภทเสียงของลูกค้า'];
             $sub_complaint_type = $row['หัวข้อย่อย'];
-            $complaint_location = $row['สถานที่เกิดข้อร้องเรียน'];
+            $complaint_location = $row['สถานที่เกิดเสียงของลูกค้า'];
             $tel_contact = $row['เบอร์โทรศัพท์'];
             $complaint_status = $row['ผลการดำเนินการ'];
             // $number_of_day = getDiffDate($sent_date, $settlement_date, $complaint_status);

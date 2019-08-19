@@ -3,7 +3,7 @@ define('LINE_API',"https://notify-api.line.me/api/notify");
  
 $token = "ULbiMmypxq8sGKBVSa5Ysu1ZR9uJYPcOEDIkzey74M8"; //ใส่Token ที่copy เอาไว้
 $str = "รายการข้อร้องเรียน
-        https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
+https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
  
 $res = notify_message($str,$token);
 print_r($res);

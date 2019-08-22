@@ -7,7 +7,7 @@
     define('LINE_API',"https://notify-api.line.me/api/notify");
     $token = "yOgiRn8Z9opjibqhlTV70UQ4SWMQAedCxkvoFyiEaGq"; //ใส่Token ที่copy เอาไว้
     $str = "รายการข้อร้องเรียน
-    https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
+https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
     
     $todaytime = strtotime('today');
     $todaydate = date('Y-m-d', $todaytime);
@@ -56,7 +56,20 @@
     }
 
     while($group = $group_list->fetch_assoc()){
-        $res = notify_message($str,$token);
-        print_r($res);
+        $url = 'https://notify-api.line.me/api/notify';
+        $data = [
+            'to' => $group['group_id'],
+            'messages' => [$messages]
+        ];
+        $post = json_encode($data);
+        $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $token);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        $result = curl_exec($ch);
+        curl_close($ch);
     }
     

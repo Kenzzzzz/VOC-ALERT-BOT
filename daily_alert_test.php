@@ -62,7 +62,7 @@ https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อควา
             'messages' => [$messages]
         ];
         $post = json_encode($data);
-        $headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $token);
+        $headers = array('Content-Type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token);
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

@@ -6,8 +6,7 @@
     
     define('LINE_API',"https://notify-api.line.me/api/notify");
     $token = "yOgiRn8Z9opjibqhlTV70UQ4SWMQAedCxkvoFyiEaGq"; //ใส่Token ที่copy เอาไว้
-    $str = "รายการข้อร้องเรียน
-https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
+    $str = $messages; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
     
     $todaytime = strtotime('today');
     $todaydate = date('Y-m-d', $todaytime);
@@ -36,6 +35,9 @@ https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อควา
             "text"=> "Daily Alert :\n\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน ในวันที่ ".DateThai(date("Y-m-d"))
         ];
     }
+    
+    $res = notify_message($str,$token);
+    print_r($res);
 
     function notify_message($message,$token){
     $queryData = array('to' => $group['group_id'],'message' => $message);
@@ -54,7 +56,8 @@ https://vocbot-region2.herokuapp.com/south.php?NUMBER=@10"; //ข้อควา
     $res = json_decode($result);
     return $res;
     }
-
+    
+    
     while($group = $group_list->fetch_assoc()){
         $url = 'https://notify-api.line.me/api/notify';
         $data = [

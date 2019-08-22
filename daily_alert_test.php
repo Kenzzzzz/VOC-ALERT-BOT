@@ -36,7 +36,7 @@
     }
 
     function notify_message($message,$token){
-    $queryData = array('message' => $message);
+    $queryData = array('to' => $group['group_id'],'message' => $message);
     $queryData = http_build_query($queryData,'','&');
     $headerOptions = array( 
          'http'=>array(

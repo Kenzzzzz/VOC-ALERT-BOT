@@ -29,7 +29,8 @@
     $complaint_list = mysqli_query($conn, $fetch_existing_complaint);
     if(mysqli_num_rows($complaint_list) > 0){
         $messages = getBubbleMessages($conn, DateThai(date("Y-m-d")), $complaint_list);
-        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
+        //$str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
+        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
         $res = notify_message($str,$token);
         print_r($res);
     } else {
@@ -37,7 +38,7 @@
             "type"=> "text",
             "text"=> "Daily Alert :\n\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน ในวันที่ ".DateThai(date("Y-m-d"))
         ];
-        $str = "รายการข้อร้องเรียน0";
+        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
         $res = notify_message($str,$token);
         print_r($res);
     }

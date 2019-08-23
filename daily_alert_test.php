@@ -29,7 +29,7 @@
     $complaint_list = mysqli_query($conn, $fetch_existing_complaint);
     if(mysqli_num_rows($complaint_list) > 0){
         $messages = getBubbleMessages($conn, DateThai(date("Y-m-d")), $complaint_list);
-        $str = "รายการข้อร้องเรียน".$messages;
+        $str = "รายการข้อร้องเรียน1";
         $res = notify_message($str,$token);
         print_r($res);
     } else {
@@ -37,7 +37,7 @@
             "type"=> "text",
             "text"=> "Daily Alert :\n\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน ในวันที่ ".DateThai(date("Y-m-d"))
         ];
-        $str = "รายการข้อร้องเรียน".$messages;
+        $str = "รายการข้อร้องเรียน0";
         $res = notify_message($str,$token);
         print_r($res);
     }

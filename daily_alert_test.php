@@ -6,7 +6,7 @@
     
     define('LINE_API',"https://notify-api.line.me/api/notify");
     $token = "yOgiRn8Z9opjibqhlTV70UQ4SWMQAedCxkvoFyiEaGq"; //ใส่Token ที่copy เอาไว้
-    $str = $messages; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
+    $str; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
     
     $todaytime = strtotime('today');
     $todaydate = date('Y-m-d', $todaytime);
@@ -29,15 +29,21 @@
     $complaint_list = mysqli_query($conn, $fetch_existing_complaint);
     if(mysqli_num_rows($complaint_list) > 0){
         $messages = getBubbleMessages($conn, DateThai(date("Y-m-d")), $complaint_list);
+        $str = "รายการข้อร้องเรียน".$messages;
+        $res = notify_message($str,$token);
+        print_r($res);
     } else {
         $messages = [
             "type"=> "text",
             "text"=> "Daily Alert :\n\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน ในวันที่ ".DateThai(date("Y-m-d"))
         ];
+        $str = "รายการข้อร้องเรียน".$messages;
+        $res = notify_message($str,$token);
+        print_r($res);
     }
     
-    $res = notify_message($str,$token);
-    print_r($res);
+    //$res = notify_message($str,$token);
+    //print_r($res);
 
     function notify_message($message,$token){
     $queryData = array('to' => $group['group_id'],'message' => $message);

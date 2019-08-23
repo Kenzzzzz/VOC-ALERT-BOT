@@ -41,8 +41,10 @@
             "text"=> "Daily Alert :\n\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน ในวันที่ ".DateThai(date("Y-m-d"))
         ];
         $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
-        $res = notify_message($str,$token);
+        $res = notify_message($str,$token1);
         print_r($res);
+        $res1 = notify_message($str,$token2);
+        print_r($res1);
     }
 
     function notify_message($message,$token){

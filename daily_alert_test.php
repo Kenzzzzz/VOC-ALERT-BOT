@@ -29,8 +29,7 @@
     $complaint_list = mysqli_query($conn, $fetch_existing_complaint);
     if(mysqli_num_rows($complaint_list) > 0){
         $messages = getBubbleMessages($conn, DateThai(date("Y-m-d")), $complaint_list);
-        //$str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
-        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nไม่มีข้อร้องเรียนสถานะกำลังดำเนินการหรือรอดำเนินการที่มากกว่าเท่ากับ 10 วัน\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
+        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\n".$district['main_office']."\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
         $res = notify_message($str,$token);
         print_r($res);
     } else {
@@ -42,9 +41,6 @@
         $res = notify_message($str,$token);
         print_r($res);
     }
-    
-    //$res = notify_message($str,$token);
-    //print_r($res);
 
     function notify_message($message,$token){
     $queryData = array('to' => $group['group_id'],'message' => $message);
@@ -62,24 +58,5 @@
     $result = file_get_contents(LINE_API,FALSE,$context);
     $res = json_decode($result);
     return $res;
-    }
-    
-    
-    while($group = $group_list->fetch_assoc()){
-        $url = 'https://notify-api.line.me/api/notify';
-        $data = [
-            'to' => $group['group_id'],
-            'messages' => [$messages]
-        ];
-        $post = json_encode($data);
-        $headers = array('Content-Type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $token);
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        $result = curl_exec($ch);
-        curl_close($ch);
     }
     

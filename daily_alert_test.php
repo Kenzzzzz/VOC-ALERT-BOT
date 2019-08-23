@@ -29,7 +29,7 @@
     $complaint_list = mysqli_query($conn, $fetch_existing_complaint);
     if(mysqli_num_rows($complaint_list) > 0){
         $messages = getBubbleMessages($conn, DateThai(date("Y-m-d")), $complaint_list);
-        $str = "รายการข้อร้องเรียน""""ประจำวันที่".DateThai(date("Y-m-d"));
+        $str = "รายการข้อร้องเรียน"\r"ประจำวันที่".DateThai(date("Y-m-d"));
         $res = notify_message($str,$token);
         print_r($res);
     } else {

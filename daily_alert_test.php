@@ -29,7 +29,7 @@
     $complaint_list = mysqli_query($conn, $fetch_existing_complaint);
     if(mysqli_num_rows($complaint_list) > 0){
         $messages = getBubbleMessages($conn, DateThai(date("Y-m-d")), $complaint_list);
-        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\n".$messages."\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
+        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
         $res = notify_message($str,$token);
         print_r($res);
     } else {

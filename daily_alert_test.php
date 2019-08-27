@@ -6,7 +6,11 @@
     
     define('LINE_API',"https://notify-api.line.me/api/notify");
     $token1 = "yOgiRn8Z9opjibqhlTV70UQ4SWMQAedCxkvoFyiEaGq"; //ใส่Token ที่copy เอาไว้
-    $token2 = "aqbc2ZriucSfysg2opBslp5TglIFGf5W72Jmotktpoi";//ภาค 2
+    $token2 = "cLcKYVzqarW0rmwl9aETQasNmnRcA3ENKzOU11XiRV0";//test1
+    $token3 = "yVkkGGDuveM5j5TVdzE4L2ISu2Q77VCIkgMfDpkG5Jd";//test2
+    $token4 = "gR7wxyWPxXFTy6lguwOSGe3DVSXhSRV7Brgy4HVupwc";//test3
+    $token5 = "7VIAki84V69XwG7Y3YBa0LvD3iZN9r1KYqsjXAIP3bq";//test4
+    //$token6 = "DquN7TlUrX5XNPuz7FJfGAqoQDeGaxgQrIZ59f7szRg";//test5
     $str; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
     
     $todaytime = strtotime('today');
@@ -35,6 +39,14 @@
         print_r($res);
         $res1 = notify_message($str,$token2);
         print_r($res1);
+        $res2 = notify_message($str,$token3);
+        print_r($res2);
+        $res3 = notify_message($str,$token4);
+        print_r($res3);
+        $res4 = notify_message($str,$token5);
+        print_r($res4);
+       /* $res5 = notify_message($str,$token6);
+        print_r($res5);*/
     } else {
         $messages = [
             "type"=> "text",
@@ -45,6 +57,14 @@
         print_r($res);
         $res1 = notify_message($str,$token2);
         print_r($res1);
+        $res2 = notify_message($str,$token3);
+        print_r($res2);
+        $res3 = notify_message($str,$token4);
+        print_r($res3);
+        $res4 = notify_message($str,$token5);
+        print_r($res4);
+       /* $res5 = notify_message($str,$token6);
+        print_r($res5);*/
     }
 
     function notify_message($message,$token){

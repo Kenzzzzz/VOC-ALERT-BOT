@@ -6,7 +6,7 @@
     
     define('LINE_API',"https://notify-api.line.me/api/notify");
     $token1 = "yOgiRn8Z9opjibqhlTV70UQ4SWMQAedCxkvoFyiEaGq"; //ใส่Token ที่copy เอาไว้
-    $token2 = "1P0bMARELQYWteHi6mn7BiibsQVg3G9gLrfqJ3Ef8d4";
+    $token2 = "aqbc2ZriucSfysg2opBslp5TglIFGf5W72Jmotktpoi";//ภาค 2
     $str; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
     
     $todaytime = strtotime('today');

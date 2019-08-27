@@ -40,13 +40,13 @@
         print_r($res);
         $res1 = notify_message($str,$token2);
         print_r($res1);
-        $res1 = notify_message($str,$token3);
+        $res2 = notify_message($str,$token3);
         print_r($res2);
-        $res1 = notify_message($str,$token4);
+        $res3 = notify_message($str,$token4);
         print_r($res3);
-        $res1 = notify_message($str,$token5);
+        $res4 = notify_message($str,$token5);
         print_r($res4);
-        $res1 = notify_message($str,$token6);
+        $res5 = notify_message($str,$token6);
         print_r($res5);
     } else {
         $messages = [
@@ -58,13 +58,13 @@
         print_r($res);
         $res1 = notify_message($str,$token2);
         print_r($res1);
-        $res1 = notify_message($str,$token3);
+        $res2 = notify_message($str,$token3);
         print_r($res2);
-        $res1 = notify_message($str,$token4);
+        $res3 = notify_message($str,$token4);
         print_r($res3);
-        $res1 = notify_message($str,$token5);
+        $res4 = notify_message($str,$token5);
         print_r($res4);
-        $res1 = notify_message($str,$token6);
+        $res5 = notify_message($str,$token6);
         print_r($res5);
     }
 

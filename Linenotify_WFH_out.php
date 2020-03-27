@@ -17,7 +17,7 @@
     if(isWeekend($todaydate) || mysqli_num_rows($holiday_list) > 0){
         return;
     }
-        $str = "รายการข้อร้องเรียน\rประจำวันที่".DateThai(date("Y-m-d"))."\nhttps://vocbot-region2.herokuapp.com/south.php?NUMBER=@10";
+        $str = "อย่าลืมลงเวลาเลิกงานกันนะครับ"."\nhttps://docs.google.com/forms/d/e/1FAIpQLScx8qZbuKJ7AIdfQsHaP1_Yn_xjL03yhA2Bokif0Bk6cslB5Q/viewform";
         $res = notify_message($str,$token1);
         print_r($res);
         

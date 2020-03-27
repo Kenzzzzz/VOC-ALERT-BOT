@@ -5,7 +5,7 @@
     require('./libs/utils/messages.php');
     
     define('LINE_API',"https://notify-api.line.me/api/notify");
-    $token1 = "yOgiRn8Z9opjibqhlTV70UQ4SWMQAedCxkvoFyiEaGq"; //test
+    $token1 = "aYELrm8lYPSrk0vjbJMLLU2HUWdhBG78tIXa298qCYI"; //กบว.(ภ2)
     
     $str; //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
     
